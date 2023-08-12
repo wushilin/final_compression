@@ -1,0 +1,18 @@
+[package]
+name = "final_compression"
+version = "1.0.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Provide Stream Encoder/Decoder for all compression algorithms"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+repository = "https://github.com/wushilin/final_compression.git"
+
+[dependencies]
+zstd = "0.12"
+urlencoding = "2.1"
+snap = "1"
+flate2 = "1"
+bzip2 = "0.4"
+lz4 = "1.24"
+rust-lzo = "0.6.2"
+xz2 = "0.1"
