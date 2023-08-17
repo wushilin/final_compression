@@ -16,3 +16,10 @@ bzip2 = "0.4"
 lz4 = "1.24"
 rust-lzo = "0.6.2"
 xz2 = "0.1"
+tokio = {version="1", features=["full"]}
+async-trait = "0.1.73"
+threadpool = "1.8.1"
+
+[[bin]]
+name="test"
+path="src/test.rs"

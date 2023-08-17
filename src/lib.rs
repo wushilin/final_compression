@@ -67,6 +67,24 @@ pub enum CompressionType {
     /// Example of parameter: "level=3"
     XZ,
 }
+
+impl From<&str> for CompressionType {
+    fn from(ctype: &str) -> Self {
+        match ctype {
+            "zstd" | "ZSTD" | "zst" | "ZST" => CompressionType::Zstd,
+            "gzip" | "GZIP" | "gz" | "GZ" => CompressionType::Gzip,
+            "lz4" | "LZ4" => CompressionType::LZ4,
+            "snappy" | "SNAPPY" => CompressionType::Snappy,
+            "xz" | "XZ" => CompressionType::XZ,
+            "zlib" | "ZLIB" => CompressionType::Zlib,
+            "bzip2" | "BZIP2" | "bz2" | "BZ2" => CompressionType::Bzip2,
+            "deflate" | "DEFLATE" => CompressionType::Deflate,
+            _ => {
+                panic!("Unknown compression type")
+            }
+        }
+    }
+}
 /// Represents parameter set for Compression
 /// The `ParamSet` can be obtained from String and &str
 /// ParamSet string expression is "key1=value1;key2=value2;key3=value3" format
